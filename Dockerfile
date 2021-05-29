@@ -1,4 +1,5 @@
 FROM python:3.7-alpine
+# Build the image from the parent
 MAINTAINER Ashwani
 
 ENV PYTHONUNBUFFERED 1
@@ -7,11 +8,13 @@ ENV PYTHONUNBUFFERED 1
 
 
 COPY ./requirements.txt /requirements.txt
+# copy local requirements to image
 RUN pip install -r requirements.txt
 
 RUN mkdir /app
 WORKDIR /app
 COPY ./app /app
+# copy app data to the image 
 
 RUN adduser -D user
 USER user

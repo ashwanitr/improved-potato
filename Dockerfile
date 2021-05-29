@@ -14,7 +14,7 @@ RUN pip install -r requirements.txt
 RUN mkdir /app
 WORKDIR /app
 COPY ./app /app
-# copy app data to the image 
+# copy app data to the image
 
 RUN adduser -D user
 USER user
